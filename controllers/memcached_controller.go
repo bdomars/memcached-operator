@@ -186,7 +186,7 @@ func (r *MemcachedReconciler) SetupWithManager(mgr ctrl.Manager) error {
 		For(&cachev1alpha1.Memcached{}).
 		Owns(&appsv1.Deployment{}).
 		WithOptions(controller.Options{
-			MaxConcurrentReconciles: 2,
+			MaxConcurrentReconciles: 1,
 		}).
 		Complete(r)
 }
